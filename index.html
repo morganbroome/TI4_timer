@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi-Player Stopwatch</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Multi-Player Stopwatch</h1>
+
+    <!-- Setup area -->
+    <div id="setup">
+      <label>Number of players:
+        <select id="numPlayers">
+          <!-- options populated by JS -->
+        </select>
+      </label>
+      <div id="namesContainer"></div>
+      <div class="row">
+        <button id="btnCreate">Create Game</button>
+      </div>
+    </div>
+
+    <!-- Game area -->
+    <div id="game" class="hidden">
+
+      <div class="timers">
+        <div class="total-block">
+          <div class="label">Total Time</div>
+          <div id="totalTime" class="big-time">00:00:00.00</div>
+        </div>
+
+        <div class="extra-block">
+          <div class="label">Extra Time</div>
+          <div id="extraTime" class="big-time extra">00:00:00.00</div>
+        </div>
+      </div>
+
+      <div id="playersList" class="players-list">
+        <!-- Player rows go here -->
+      </div>
+
+      <div class="controls">
+        <button id="switchBtn">Next</button>
+        <button id="pauseBtn">Resume</button>
+        <button id="passBtn">Pass</button>
+        <button id="restartRoundBtn">New Round</button>
+        <!--button id="resetBtn">Reset</button-->
+      </div>
+
+      <div style="height: 20px;"></div>
+      <div class="credit">Built by Guy Broome</div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
